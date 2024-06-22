@@ -1,24 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Todo from "./component/Todo";
+import Counter from "./component/Counter";
 
 class App extends Component {
-  state = {
-    string: "fuad",
-  };
-
-  handleChange=()=>{
-    this.setState({
-      string:'ahmad fuad '
-    })
-  }
-
   render() {
     return (
       <div className="App">
-        <h1>Welcome {this.state.string}</h1>
-        <Todo send={this.state.string} />
-        <button onClick={this.handleChange}>Change Value</button>
+        <h1>Event</h1>
+        <Counter />
       </div>
     );
   }
