@@ -2,16 +2,18 @@ import React, { Component } from "react";
 
 export default class Forms extends Component {
   state = {
-    inputValue: "",
+    firstName: "",
+    lastName: "",
   };
   onHandleChange = (event) => {
     this.setState({
-      inputValue: event.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  onSubmit = () => {
-    console.log(this.state.inputValue);
+  onSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state);
   };
 
   render() {
@@ -20,11 +22,18 @@ export default class Forms extends Component {
         <form action="">
           <h1>Form Component</h1>
           <input
+            value={this.state.firstName}
             onChange={this.onHandleChange}
-            value={this.state.inputValue}
+            name="firstName"
             type="text"
           />
-          <button type="button" onClick={this.onSubmit}>Submit</button>
+          <input
+            value={this.state.lastName}
+            onChange={this.onHandleChange}
+            name="lastName"
+            type="text"
+          />
+          <button onClick={this.onSubmit}>Submit</button>
         </form>
       </div>
     );
