@@ -27,3 +27,6 @@ export default class Counter extends Component {
     );
   }
 }
+
+
+// completed counter project
