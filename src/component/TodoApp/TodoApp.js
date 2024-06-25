@@ -34,6 +34,14 @@ export default class TodoApp extends Component {
     })
   }
 
+  changeValue = (data) => {
+    this.setState({
+      inputValue: data
+    }, () => {
+      this.inputRef.focus()
+    })
+  }
+
   render() {
 
     const { inputValue, items } = this.state;
@@ -42,18 +50,20 @@ export default class TodoApp extends Component {
       <div className="todo-container">
         <form className="input-section" onSubmit={this.storeItems}>
           <h1>Todo App</h1>
-          <input value={inputValue} onChange={this.handleChange} type="text" placeholder="Enter Items...." />
+          <input ref={(input) => { this.inputRef = input; }} value={inputValue} onChange={this.handleChange} type="text" placeholder="Enter Items...." />
         </form>
         <ul>
           {items.map((data, index) => {
             return (
               <li key={index}>
-                {data} <i class="fa-regular fa-pen-to-square icons"></i> <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can"></i>
+                <span>{data}</span>
+                <i onClick={() => this.changeValue(data)} className="fa-regular fa-pen-to-square icons"></i>
+                <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can icons"></i>
               </li>
             );
           })}
         </ul>
       </div>
-    );
+    );  
   }
 }

@@ -32,28 +32,37 @@ h1 {
 input::placeholder {
   color: #afb5b6;
 }
+
 ul {
-  text-align: left;
-  padding: 0%;
+  list-style-type: none;
+  padding: 0;
 }
+
 ul li {
-  list-style: none;
   background-color: #055565;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 10px;
   color: #c0c7c7;
-  box-shadow: 0 4px 6px #00000066;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   display: flex;
+  justify-content: space-between; /* Aligns items to the start and end of the flex container */
   align-items: center;
 }
-ul li i{
-  margin-left: 10px;
+
+ul li span {
+  flex: 1; /* Allows the text to take up remaining space */
+}
+
+.icons-container {
+  display: flex;
+}
+
+.icons {
   cursor: pointer;
+  margin-left: 10px; /* Adjust spacing between icons if needed */
 }
-ul li .icons{
- margin-left:310px;
-}
-ul li i:hover {
-  color: #b3b8b8;
+
+.icons:hover {
+  color: #b3b8b8; /* Change color on hover */
 }
