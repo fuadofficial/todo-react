@@ -14,7 +14,7 @@ export default class TodoApp extends Component {
     })
   }
 
-  storeItems = event => {
+  storeItems = (event) => {
     event.preventDefault()
     const { inputValue } = this.state;
 
@@ -25,6 +25,7 @@ export default class TodoApp extends Component {
   };
 
   render() {
+
     const { inputValue, items } = this.state;
 
     return (
