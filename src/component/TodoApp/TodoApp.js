@@ -18,11 +18,21 @@ export default class TodoApp extends Component {
     event.preventDefault()
     const { inputValue } = this.state;
 
-    this.setState({
-      items: [...this.state.items, inputValue],
-      inputValue: ""
-    });
+    if (inputValue === "") {
+      alert('Please Enter Any Values...')
+    } else {
+      this.setState({
+        items: [...this.state.items, inputValue],
+        inputValue: ""
+      });
+    }
   };
+
+  deletItem = (key) => {
+    this.setState({
+      items: this.state.items.filter((data,index)=> index !== key)
+    })
+  }
 
   render() {
 
@@ -38,7 +48,7 @@ export default class TodoApp extends Component {
           {items.map((data, index) => {
             return (
               <li key={index}>
-                {data} <i className="fa-solid fa-trash-can"></i>
+                {data} <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can"></i>
               </li>
             );
           })}
@@ -47,4 +57,3 @@ export default class TodoApp extends Component {
     );
   }
 }
-// some changes
