@@ -30,7 +30,7 @@ export default class TodoApp extends Component {
 
   deletItem = (key) => {
     this.setState({
-      items: this.state.items.filter((data,index)=> index !== key)
+      items: this.state.items.filter((data, index) => index !== key)
     })
   }
 
@@ -48,7 +48,7 @@ export default class TodoApp extends Component {
           {items.map((data, index) => {
             return (
               <li key={index}>
-                {data} <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can"></i>
+                {data} <i class="fa-regular fa-pen-to-square icons"></i> <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can"></i>
               </li>
             );
           })}
