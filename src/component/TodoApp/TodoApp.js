@@ -34,12 +34,12 @@ export default class TodoApp extends Component {
     })
   }
 
-  changeValue = (data) => {
+  changeValue = (data, index) => {
     this.setState({
       inputValue: data
     }, () => {
       this.inputRef.focus()
-    })
+    },)
   }
 
   render() {
@@ -57,13 +57,13 @@ export default class TodoApp extends Component {
             return (
               <li key={index}>
                 <span>{data}</span>
-                <i onClick={() => this.changeValue(data)} className="fa-regular fa-pen-to-square icons"></i>
+                <i onClick={() => this.changeValue(data, index)} className="fa-regular fa-pen-to-square icons"></i>
                 <i onClick={() => this.deletItem(index)} className="fa-solid fa-trash-can icons"></i>
               </li>
             );
           })}
         </ul>
       </div>
-    );  
+    );
   }
 }
