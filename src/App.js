@@ -1,5 +1,5 @@
 import React from "react";
-import TodoApp from "./component/TodoApp";
+import TodoApp from "./component/TodoApp/TodoApp";
 import Header from "./component/Header";
 import About from "./component/TodoApp/About";
 import Text from "./component/Text";
