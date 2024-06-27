@@ -9,8 +9,10 @@ export default function App() {
     <Router>
       <Header />
       <Routes>
+        {/* this is project page */}
         <Route path="/" element={<TodoApp />} />
-        <Route path="/about" element={<About/>} />
+        {/* this is about page for cheking router and routes */}
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
