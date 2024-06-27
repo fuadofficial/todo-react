@@ -1,9 +1,8 @@
 import React from "react";
 import TodoApp from "./component/TodoApp/TodoApp";
 import Header from "./component/Header";
-import About from "./component/TodoApp/About";
-import Text from "./component/Text";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./component/TodoApp/About/About";
 
 export default function App() {
   return (
@@ -11,8 +10,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<TodoApp />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/text" element={<Text />} />
+        <Route path="/about" element={<About/>} />
       </Routes>
     </Router>
   );
